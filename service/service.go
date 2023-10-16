@@ -23,8 +23,8 @@ func Serve(request model.QueryRequest) (model.QueryResponse){
 		Build()
 
 	fmt.Println("\nGenerated SQL query:", query)
-	fmt.Println("Query arguments:", args[0])
-	players := database.Read(query, args[0])
+	fmt.Println("Query arguments:", args)
+	players := database.Read(query, args)
 	fmt.Println(players)
 	return model.QueryResponse{Players: players}
 }

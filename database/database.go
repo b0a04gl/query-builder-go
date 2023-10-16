@@ -34,13 +34,13 @@ func Get(connStr string) {
 	fmt.Printf("connected to %v\n\n", GlobalDB.Client)
 }
 
-func Read(query string, args any) ([]model.Player){
+func Read(query string, args []interface{}) ([]model.Player){
 
 	if GlobalDB == nil {
 		log.Fatal("DB not available")
 	}
 
-	rows, err := GlobalDB.Client.Query(query, args)
+	rows, err := GlobalDB.Client.Query(query, args[0])
 	if err != nil {
 		log.Fatal(err)
 	}
