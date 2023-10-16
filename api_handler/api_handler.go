@@ -12,7 +12,7 @@ import (
 
 func StartServer() {
 	r := mux.NewRouter()
-	r.HandleFunc("/api", PostHandler).Methods("POST")
+	r.HandleFunc("/fetchPlayers", PostHandler).Methods("POST")
 	http.Handle("/", r)
 
 	fmt.Println("Server is starting on port 8080...")
