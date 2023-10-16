@@ -14,8 +14,14 @@ type DB struct {
 var GlobalDB *DB
 
 func Get(connStr string) {
-	db, err := get(connStr)
+
+	db, err := sql.Open("postgres", connStr)
+
 	if err != nil {
+		return
+	}
+
+	if err := db.Ping(); err != nil {
 		return
 	}
 
@@ -24,20 +30,6 @@ func Get(connStr string) {
 	}
 
 	fmt.Printf("connected to %v\n", GlobalDB.Client)
-}
-
-
-func get(connStr string) (*sql.DB, error) {
-	db, err := sql.Open("postgres", connStr)
-	if err != nil {
-		return nil, err
-	}
-
-	if err := db.Ping(); err != nil {
-		return nil, err
-	}
-
-	return db, nil
 }
 
 func Read() {
