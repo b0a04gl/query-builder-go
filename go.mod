@@ -1,6 +1,6 @@
 module github.com/querybuilder
 
-go 1.21.3
+go 1.21
 
 // github.com/golang-migrate/migrate/v4 v4.10.0
 // github.com/joho/godotenv v1.3.0
