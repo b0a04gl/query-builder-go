@@ -29,16 +29,16 @@ func Get(connStr string) {
 		Client: db,
 	}
 
-	fmt.Printf("connected to %v\n", GlobalDB.Client)
+	fmt.Printf("connected to %v\n\n", GlobalDB.Client)
 }
 
-func Read() {
+func Read(query string,args any) {
 
 	if GlobalDB == nil{
 		log.Fatal("DB not available")
 	}
 
-	rows, err := GlobalDB.Client.Query("SELECT id, name FROM users")
+	rows, err := GlobalDB.Client.Query(query,args)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -47,11 +47,14 @@ func Read() {
 	for rows.Next() {
 		var id int
 		var name string
-
-		if err := rows.Scan(&id, &name); err != nil {
+		var team string
+		var role string
+		var total_runs int
+		var total_wickets int
+		if err := rows.Scan(&id, &name, &team, &role, &total_runs, &total_wickets); err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("ID: %d, Name: %s\n", id, name)
+		fmt.Printf("\nID: %d, Name: %s, team: %s, role: %s, total_runs: %d, total_wickets : %d \n", id, name, team, role, total_runs, total_wickets)
 
 	}
 
