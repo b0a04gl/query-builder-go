@@ -3,7 +3,7 @@ package model
 type QueryRequest struct {
 	Select  []string `json:"select"`
 	From    string   `json:"from"`
-	Where   []string `json:"where"`
+	Where   string `json:"where"`
 	OrderBy string   `json:"orderBy"`
 }
 

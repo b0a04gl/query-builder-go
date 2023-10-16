@@ -16,10 +16,10 @@ func Serve(request model.QueryRequest) (model.QueryResponse){
 	builder := querybuilder.NewSQLBuilder()
 
 	query, args := builder.
-		Select("id", "name", "team", "role", "total_runs", "total_wickets").
-		From("players").
-		Where("role = $1", "batsman").
-		OrderBy("total_runs DESC").
+		Select(request.Select...).
+		From(request.From).
+		Where("role = $1", request.Where).
+		OrderBy(request.OrderBy).
 		Build()
 
 	fmt.Println("\nGenerated SQL query:", query)
