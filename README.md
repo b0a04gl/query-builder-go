@@ -57,7 +57,7 @@ package main
 
 import (
     "fmt"
-    "github.com/your-username/querybuilder"
+    "github.com/balaji6666/querybuilder"
 )
 
 func main() {
