@@ -16,7 +16,7 @@ This Go-based Query Builder is a flexible utility for generating SQL queries dyn
 To use this query builder in your Go project, you can easily install it using `go get`:
 
 ```sh
-go get github.com/balaji6666/querybuilder
+go get github.com/b0a04gl/querybuilder
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ Here's how to get started with this query builder:
 1. Import the package:
 
     ```go
-    import "github.com/balaji6666/querybuilder"
+    import "github.com/b0a04gl/querybuilder"
     ```
 
 2. Create a new query builder instance:
@@ -57,7 +57,7 @@ package main
 
 import (
     "fmt"
-    "github.com/balaji6666/querybuilder"
+    "github.com/b0a04gl/querybuilder"
 )
 
 func main() {
