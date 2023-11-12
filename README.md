@@ -1,6 +1,5 @@
 # Query Builder in Go
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 This Go-based Query Builder is a flexible utility for generating SQL queries dynamically. It provides a convenient way to construct SQL SELECT statements with support for various clauses like SELECT, FROM, WHERE, and ORDER BY.
 
@@ -75,14 +74,7 @@ func main() {
 }
 ```
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
 - Inspired by the need for a flexible and easy-to-use SQL query builder in Go.
-
-## Get in Touch
-
-If you have questions or suggestions, feel free to [contact us](mailto:youremail@example.com) or [open an issue](https://github.com/your-username/querybuilder/issues).
